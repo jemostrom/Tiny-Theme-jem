@@ -1,0 +1,126 @@
+header {
+  margin-bottom: 2em;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+}
+#menu {
+  position: relative;
+  border-radius: 5px;
+}
+
+figure {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+figcaption {
+   text-align:center;
+   font-size: 80%; 
+   font-style: italic;
+}
+
+/*Strip the ul of padding and list styling*/
+header ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: absolute;
+}
+/*Create a horizontal list with spacing*/
+header li {
+    display:inline-block;
+    float: left;
+    margin-right: 3px;
+margin-left: 3px;
+}
+/*Style for menu links*/
+header li a {
+    display:block;
+    /* height: 50px; */
+    margin: 0 10px;
+    text-align: left;
+    line-height: 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000;
+    text-decoration: none;
+}
+/*Hover state for top level links*/
+header li:hover a {
+    /* background: #19c589; */
+    background: #E2E2E2;
+}
+/*Style for dropdown links*/
+header li:hover ul a {
+    background: #f3f3f3;
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px;
+}
+/*Hover state for dropdown links*/
+header li:hover ul a:hover {
+    background: #19c589;
+    color: #fff;
+}
+/*Hide dropdown links until they are needed*/
+header li ul {
+    display: none;
+}
+/*Make dropdown links vertical*/
+header li ul li {
+    display: block;
+    float: none;
+}
+/*Prevent text wrapping*/
+header li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+/*Display the dropdown on hover*/
+header ul li a:hover + .hidden, header .hidden:hover {
+    display: block;
+    background: #ffffff88
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border-radius-bottom-left: 5px;
+border-radius-bottom-right: 5px;
+}
+/*Style 'show menu' label button and hide it by default*/
+header .show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background: #19c589;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+/*Responsive Styles*/
+@media screen and (max-width : 760px){
+    /*Make dropdown links appear inline*/
+    header ul {
+        position: static;
+        display: none;
+    }
+    /*Create vertical spacing*/
+    header li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    header ul li, header li a {
+        width: 100%;
+    }
+    /*Display 'show menu' link*/
+    header .show-menu {
+        display:block;
+    }
+}
