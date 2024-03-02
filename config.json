@@ -1,3 +1,13 @@
 {
-	"paginate": 20
+   "paginate": 20,
+   "markup": {
+      "goldmark": {
+         "parser": {
+            "attribute": {
+               "block": true
+            },
+            "wrapStandAloneImageWithinParagraph": false
+         }
+      }
+   }
 }
